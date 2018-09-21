@@ -89,7 +89,7 @@ class NF_Admin_CPT_DownloadAllSubmissions extends NF_Step_Processing {
             }
             $export .= NF_Database_Models_Submission::export( $this->args['form_id'], $sub_ids, TRUE );
             if( 1 < $this->step ) {
-                $export = substr( $export, strpos( $export, PHP_EOL ) + 1 );
+                $export = substr( $export, strpos( $export, "\n" ) + 1 );
             }
 
             fwrite( $myfile, $export );
