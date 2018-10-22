@@ -36,7 +36,7 @@ final class NF_Dispatcher
      * @since  3.2
      * @return void
      * 
-     * @updated 3.3.17
+     * @updated UPDATE_VERSION_ON_MERGE
      */
     public function update_environment_vars() {
         global $wpdb;
