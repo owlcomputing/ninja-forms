@@ -184,6 +184,10 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
      */
     public function custom_columns( $column, $sub_id )
     {
+        global $post_type;
+        
+        if ( 'nf_sub' !== $post_type ) return false;
+
         $sub = Ninja_Forms()->form()->get_sub( $sub_id );
 
         switch( $column ){
