@@ -110,6 +110,7 @@ define( [], function() {
 				codemirror: { // codemirror options
 				    theme: 'monokai',
 				    lineNumbers: true,
+                    lineWrapping: true,
 				    callbacks: {
 				    	onBlur: function( editor ) {
 				    		var value = editor.getValue();
