@@ -271,6 +271,25 @@ define( [], function() {
 						return '';
 					}
 				},
+                
+                renderNumberDefault: function() {
+                    // If the field is clean...
+                    if ( this.clean ) {
+                        // If we have a default...
+                        if ( this.default ) {
+                            return this.default;
+                        } // If we do not have a placeholder...
+                        else if ( ! this.placeholder ) {
+                            return this.value;
+                        } // Otherwise...
+                        else {
+                            return '';
+                        }
+                    } // Otherwise... (The field is not clean.)
+                    else {
+                        return this.value;
+                    }
+                },
 
 				renderCurrencyFormatting: function( number ) {
 					/*
