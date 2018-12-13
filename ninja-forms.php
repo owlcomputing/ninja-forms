@@ -394,6 +394,12 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
                 self::$instance->metaboxes[ 'append-form' ] = new NF_Admin_Metaboxes_AppendAForm();
 
                 /*
+                 * Email Telemetry
+                 */
+                $email_telemetry = new NF_EmailTelemetry();
+                $email_telemetry->setup();
+
+                /*
                  * Require EDD auto-update file
                  */
                 if( ! class_exists( 'EDD_SL_Plugin_Updater' ) ) {
