@@ -1,4 +1,20 @@
+stages:
+  - testing
+  - security
+
+phpunit:
+  stage: testing
+  image: wordpress:4.9.8-php7.1
+  script:
+  - apt-get update -yqq
+  - apt-get install git -yqq # Install git, the php image doesn't have installed
+  - apt-get -yqqf install vim wget zip unzip subversion mysql-client libmcrypt-dev --fix-missing # instll the required packages for the running CI tests.
+  - curl -sS https://getcomposer.org/installer | php # Install composer
+  - php composer.phar install # Install all project dependencies
+  - vendor/bin/phpunit --bootstrap tests-bootstrap.php tests/includes/EmailTelemetryTest
+
 sast:
+  stage: security
   image: docker:stable
   variables:
     DOCKER_DRIVER: overlay2
