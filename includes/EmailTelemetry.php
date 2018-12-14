@@ -5,17 +5,36 @@
  */
 class NF_EmailTelemetry
 {
+    private $is_opted_in = false;
+
+    /**
+     * Constructor which takes in a paremeter to tell the class whether the site is opted 
+     * in for telemetry or not
+     * 
+     * @param $opted_in
+     * 
+     * @since UPDATE_VERSION
+     */
+    public function __construct( $opted_in = false ) {
+        $this->is_opted_in = $opted_in;
+    }
+    
+
     /**
      * @hook phpmailer_init The last action before the email is sent.
      */
     public function setup()
     {
-        /**
-         * @link https://codex.wordpress.org/Plugin_API/Action_Reference/phpmailer_init
-         */
-        add_action( 'phpmailer_init', [ $this, 'update_metrics' ] );
-    }
 
+        if( $this->is_opted_in ) {
+            /**
+             * @link https://codex.wordpress.org/Plugin_API/Action_Reference/phpmailer_init
+             */
+            add_action( 'phpmailer_init', array( $this, 'update_metrics' ) );
+        }
+
+    }
+    
     /** 
      * @NOTE No need to return $phpmailer as it is passed in by reference (aka Output Parameter). 
      */

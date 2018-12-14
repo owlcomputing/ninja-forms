@@ -396,7 +396,9 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
                 /*
                  * Email Telemetry
                  */
-                $email_telemetry = new NF_EmailTelemetry();
+
+                $email_telemetry = new NF_EmailTelemetry( get_option( ' ninja_forms_optin_reported' ) );
+
                 $email_telemetry->setup();
 
                 /*
