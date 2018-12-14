@@ -13,16 +13,23 @@ define( [], function() {
         },
 
         initialize: function () {
-            this.listenTo( nfRadio.channel( 'merge-tags' ), 'after:filtersearch', this.removeActive );
+            this.listenTo( nfRadio.channel( 'merge-tags' ), 'after:filtersearch', this.updateActive );
         },
 
         onClick: function(){
           this.updateTags();
-          this.setActive();
         },
 
         updateTags: function() {
             nfRadio.channel( 'merge-tags' ).request( 'update:taglist', this.model.get( 'id' ) );
+        },
+
+        updateActive: function( section ) {
+            this.$el.removeClass( 'active' );
+
+            if ( section == this.model.get( 'id' ) ) {
+                this.$el.addClass( 'active' );
+            }
         },
 
         setActive: function(){
@@ -30,9 +37,6 @@ define( [], function() {
             this.$el.siblings().removeClass( 'active' );
         },
 
-        removeActive: function(){
-            this.$el.removeClass( 'active' );
-        }
     });
 
     return view;

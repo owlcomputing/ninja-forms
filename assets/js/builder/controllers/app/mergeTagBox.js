@@ -329,7 +329,6 @@ define( [
         },
 
         mergeTagsButtonClick: function( e ){
-
             var $this = jQuery( this );
 
             if( $this.siblings().hasClass( 'merge-tag-focus' ) ){
@@ -373,6 +372,21 @@ define( [
                 $overlayElement.addClass('merge-tag-focus-overlay');
             }
 
+            /**
+             * TODO: This is a wonky work around for removing Product and Quantity fields from calculation merge tags.
+             * The merge tag system doesn't currently respect "exclude" merge tag settings.
+             *
+             * If 'eq' is the textarea next to the merge tag icon, then we're in a calculation setting.
+             */
+            if ( 'eq' == jQuery( e.target ).prev( 'textarea' ).data( 'id' ) ) {
+                var calc = true;
+            } else {
+                var calc = false;
+            }
+
+            // Request that our merge tag box update its tag list, passing whether or not we're in a calculation setting.
+            nfRadio.channel( 'merge-tags' ).request( 'update:taglist', 'fields', calc );
+            
             jQuery( '#merge-tags-box' ).css( 'display', 'block' );
             nfRadio.channel( 'drawer' ).request( 'prevent:close' );
 
@@ -450,7 +464,6 @@ define( [
         },
 
         keyupCallback: function( event, target, type ){
-
             var type = type || 'setting';
 
             if( /* ENTER */ 13 == event.keyCode ){
@@ -486,7 +499,7 @@ define( [
 
 
             var dataID = jQuery( this ).data( 'id' );
-            if( dataID && 'eq' != dataID ) return;
+            if( dataID && 'eq' == dataID ) return;
 
             // Store the current caret position.
             if( 'rte' == type ){
@@ -518,7 +531,7 @@ define( [
             if( 0 !== mergetags.length ) {
 
                 nfRadio.channel( 'mergeTags' ).request( 'set:old', mergetags[0] );
-
+                
                 jQuery('#merge-tags-box').css( 'display', 'block' );
                 nfRadio.channel( 'drawer' ).request( 'prevent:close' );
                 $this.addClass('merge-tag-focus');
@@ -552,7 +565,6 @@ define( [
                 });
 
                 var value = mergetags[0].replace( '{', '' );
-                nfRadio.channel( 'merge-tags' ).request( 'filtersearch', value );
             } else {
                 jQuery( '#merge-tags-box' ).css( 'display', 'none' );
                 nfRadio.channel( 'drawer' ).request( 'enable:close' );
