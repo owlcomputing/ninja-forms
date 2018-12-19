@@ -13,7 +13,7 @@ class NF_Telemetry_MetricRepository implements NF_Telemetry_RepositoryInterface
 
     public function get()
     {
-        return get_option( $this->option, $this->default );
+        return absint( get_option( $this->option, $this->default ) );
     }
 
     public function save( $new_value )
