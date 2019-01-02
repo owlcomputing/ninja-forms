@@ -13,7 +13,7 @@ class NF_EmailTelemetry
      * 
      * @param $opted_in
      * 
-     * @since UPDATE_VERSION
+     * @since 3.3.21
      */
     public function __construct( $opted_in = false ) {
         $this->is_opted_in = $opted_in;
