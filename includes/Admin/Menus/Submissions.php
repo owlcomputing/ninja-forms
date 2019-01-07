@@ -296,6 +296,9 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
         $vars = apply_filters( 'ninja_forms_sub_table_qv', $vars, $form_id );
     }
 
+    /**
+     * @updated UPDATE_VERSION_ON_MERGE
+     */
     public function search( $pieces ) {
         global $typenow;
         // filter to select search query
@@ -308,6 +311,7 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
 
             foreach ($keywords as $word) {
 
+                $wpdb->escape_by_ref( $word );
                 $query .= " (mypm1.meta_value  LIKE '%{$word}%') OR ";
             }
 
