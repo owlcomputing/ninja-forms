@@ -297,7 +297,7 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
     }
 
     /**
-     * @updated UPDATE_VERSION_ON_MERGE
+     * @updated 3.3.21.2
      */
     public function search( $pieces ) {
         global $typenow;
