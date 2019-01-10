@@ -3,7 +3,7 @@ Contributors: wpninjasllc, kstover, jameslaws, kbjohnson90, klhall1987, krmoorho
 Tags: form, forms, contact form, custom form, form builder, form creator, form manager, form creation, contact forms, custom forms, forms builder, forms creator, forms manager, forms creation, form administration,
 Requires at least: 4.8
 Tested up to: 5.0
-Stable tag: 3.3.21.2
+Stable tag: 3.3.21.3
 License: GPLv2 or later
 
 Drag and drop fields in an intuitive UI to create contact forms, email subscription forms, order forms, payment forms, send emails and more!
@@ -111,13 +111,19 @@ For help and video tutorials, please visit our website: [Ninja Forms Documentati
 
 == Upgrade Notice ==
 
-= 3.3.21.2 (7 January 2019) =
+= 3.3.21.3 (10 January 2019) =
 
 *Security:*
 
-* Patched a blind SQL injection vulnerability in the search filter on our submissions page. Thank you to Samuel Anttila at netsec.expert for practicing responsible disclosure.
+* (2.9x) Duplicated previous blind SQL injection patch for our deprecated 2.9x codebase. Many thanks to Plugin Vulnerabilities for reporting that our initial pass missed this.
 
 == Changelog ==
+
+= 3.3.21.3 (10 January 2019) =
+
+*Security:*
+
+* (2.9x) Duplicated previous blind SQL injection patch for our deprecated 2.9x codebase. Many thanks to Plugin Vulnerabilities for reporting that our initial pass missed this.
 
 = 3.3.21.2 (7 January 2019) =
 
