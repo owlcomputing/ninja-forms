@@ -2,7 +2,7 @@
 
 This document describes the architecture of the Ninja Forms database layer.
 
-## Current Structure (1.1)
+## Current Structure (1.2)
 
 This section contains the current structure of the Ninja Forms data layer and is updated each time that structure changes. For legacy data, please see the individual version notes.
 
@@ -100,6 +100,24 @@ _**nf3_fields**_ (Table of individual Fields)
   * ON UPDATE CURRENT_TIMESTAMP
 * updated_at (The date/time the Field was last updated)
   * datetime
+* field_label (The displayable label of the Field)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+* field_key (The adminstrative key of the Field)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+* order (The display order of the Field on the Form)
+  * int(11)
+* required (Whether or not this is a required Field)
+  * bit(1)
+* default_value (The default value assigned to the Field)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+* label_pos (The label position of the Field)
+  * varchar(15)
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+* personally_identifiable (Whether or not the Field contains personally identifiable data)
+  * bit(1)
 
 
 _**nf3_field_meta**_ (Table of Settings associated with each Field)
@@ -119,7 +137,13 @@ _**nf3_field_meta**_ (Table of Settings associated with each Field)
 * value (The value of the Setting)
   * longtext
   * COLLATE DATABASE_DEFAULT
-  
+* meta_key (The administrative key of the Setting)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+* meta_value (The value of the Setting)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+
 ### Actions
 
 _**nf3_actions**_ (Table of individual Actions)
@@ -151,6 +175,9 @@ _**nf3_actions**_ (Table of individual Actions)
   * ON UPDATE CURRENT_TIMESTAMP
 * updated_at (The date/time the Action was last updated)
   * datetime
+* label (The label of the action)
+  * longtext
+  * COLLATE DATABASE_DEFAULT
 
 
 _**nf3_action_meta**_ (Table of Settings associated with each Action)
@@ -170,6 +197,12 @@ _**nf3_action_meta**_ (Table of Settings associated with each Action)
 * value (The value of the Setting)
   * longtext
   * COLLATE DATABASE_DEFAULT
+* meta_key (The administrative key of the Setting)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+* meta_value (The value of the Setting)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
 
 ### Objects
 
@@ -291,21 +324,6 @@ _**nf3_upgrades**_ (Table of Forms as they exist in the current structure and th
   * int(11)
   * NOT NULL
   * DEFAULT 0
-  
-### Chunks
-
-_**nf3_chunks**_ (Table of Chunks created on publish to be reconstructed into a Ninja Forms cache)
-* id (The unique ID of the Chunk)
-  * int(11)
-  * NOT NULL
-  * AUTO_INCREMENT
-  * Primary Key
-* name (The name of the Chunk)
-  * varchar(200)
-  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
-* value (The value of the Chunk)
-  * longtext
-  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
 
 ### Chunks
 
@@ -322,7 +340,7 @@ _**nf3_chunks**_ (Table of Chunks created on publish to be reconstructed into a 
   * longtext
   * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
 
-## Version 1.0
+## Version 1.0 (Introduced in version 3.0.0)
 
 Defined initial structure for Ninja Forms data layer.
 
@@ -576,7 +594,7 @@ _**postmeta**_ (The default WordPress postmeta table)
   * longtext
   * COLLATE DATABASE_DEFAULT
 
-## Version 1.1
+## Version 1.1 (Introduced in version 3.3.0)
 
 Defined tracker table for data structure updates.
 
@@ -642,3 +660,61 @@ ADDED:
 * meta_value (The value of the Setting)
   * longtext
   * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+
+## Version 1.2 (Introduced in version ???)
+
+Updated fields tables
+
+### Fields
+
+_**nf3_fields**_ (Table of individual Fields)
+ADDED:
+* field_label (The displayable label of the Field)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+* field_key (The adminstrative key of the Field)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+* order (The display order of the Field on the Form)
+  * int(11)
+* required (Whether or not this is a requried Field)
+  * bit(1)
+* default_value (The default value assigned to the Field)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+* label_pos (The label position of the Field)
+  * varchar(15)
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+* personally_identifiable (Whether or not the Field contains personally identifiable data)
+  * bit(1)
+
+
+_**nf3_field_meta**_
+ADDED: 
+* meta_key (The administrative key of the Setting)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+* meta_value (The value of the Setting)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+
+Updated actions tables
+
+### Actions
+
+_**nf3_actions**_
+ADDED:
+* label (The label of the Action)
+  * longtext
+  * COLLATE DATABASE_DEFAULT
+
+
+_**nf3_action_meta**_
+ADDED: 
+* meta_key (The administrative key of the Setting)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+* meta_value (The value of the Setting)
+  * longtext
+  * COLLATE utf8mb4_general_ci (fallback to utf8_general_ci)
+
