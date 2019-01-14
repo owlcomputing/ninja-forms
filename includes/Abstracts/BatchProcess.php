@@ -39,7 +39,7 @@ abstract class NF_Abstracts_BatchProcess
     /**
      * Decides whether we need to run startup or restart and then calls processing.
      *
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     public function init()
@@ -64,7 +64,7 @@ abstract class NF_Abstracts_BatchProcess
     /**
      * Function to loop over the batch.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      * @return  void
      */
     public function process()
@@ -77,7 +77,7 @@ abstract class NF_Abstracts_BatchProcess
     /**
      * Function to run any setup steps necessary to begin processing.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      * @return  void
      */
     public function startup()
@@ -90,7 +90,7 @@ abstract class NF_Abstracts_BatchProcess
     /**
      * Function to run any setup steps necessary to begin processing for steps after the first.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      * @return  void 
      */
     public function restart()
@@ -105,7 +105,7 @@ abstract class NF_Abstracts_BatchProcess
      *
      * If this method isn't overwritten by a child, it defaults to 1.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      * @return  int 
      */
     public function get_steps()
@@ -116,7 +116,7 @@ abstract class NF_Abstracts_BatchProcess
     /**
      * Function to cleanup any lingering temporary elements of a batch process after completion.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      * @return  void 
      */
     public function cleanup()
@@ -134,7 +134,7 @@ abstract class NF_Abstracts_BatchProcess
      * Runs cleanup().
      * Responds to the JS front-end.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      * @return  void 
      */
     public function batch_complete()
@@ -153,7 +153,7 @@ abstract class NF_Abstracts_BatchProcess
      *
      * Used in child methods to stop processing the current step an dmove to the next.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      * @return  void 
      */
     public function next_step()
@@ -166,7 +166,7 @@ abstract class NF_Abstracts_BatchProcess
     /**
      * Method that encodes $this->response and sends the data to the front-end.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      * @return  void 
      */
     public function respond()

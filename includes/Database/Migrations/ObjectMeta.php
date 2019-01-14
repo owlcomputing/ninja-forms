@@ -20,7 +20,7 @@ class NF_Database_Migrations_ObjectMeta extends NF_Abstracts_Migration
      * 
      * @since 3.0.0
      * 
-     * @updated UPDATE_VERSION_ON_MERGE
+     * @updated 3.4.0
      */
     public function run()
     {
@@ -40,7 +40,7 @@ class NF_Database_Migrations_ObjectMeta extends NF_Abstracts_Migration
     /**
      * Function to ensure proper collation of the object_meta table.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function cache_collate_objects()
     {

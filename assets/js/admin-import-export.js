@@ -15,7 +15,7 @@ jQuery( document ).ready( function( $ ) {
 	 * Listen for clicks on our "import" button.
 	 * It sets data for our batch processor and then instantiates a batch process.
 	 * 
-	 * @since  UPDATE_VERSION_ON_MERGE
+	 * @since  3.4.0
 	 * @param  object e	Click Event
 	 * @return void
 	 */
@@ -56,7 +56,7 @@ jQuery( document ).ready( function( $ ) {
 	 * Read the contents and base64 encode them using the HTML5 FileReader API.
 	 * Set the contents to our importFormFile variable.
 	 * 
-	 * @since  UPDATE_VERSION_ON_MERGE
+	 * @since  3.4.0
 	 * @param  object e Change Event
 	 * @return {[type]}             [description]
 	 */

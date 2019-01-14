@@ -61,7 +61,7 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
     /**
      * Function to run any setup steps necessary to begin processing.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      * @return  void
      */
     public function startup()
@@ -131,7 +131,7 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
     /**
      * On processing steps after the first, we need to grab our data from our saved option.
      * 
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     public function restart()
@@ -143,7 +143,7 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
     /**
      * Function to loop over the batch.
      *
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     public function process()
@@ -223,7 +223,7 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
     /**
      * Insert our form using $this->_db->insert by building an array of column => value pairs and %s, %d types.
      *
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     public function insert_form()
@@ -257,7 +257,7 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
      * Loop over our remaining form settings that we need to insert into meta.
      * Add them to our "Values" string for insertion later.
      * 
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     public function insert_form_meta()
@@ -292,7 +292,7 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
      *
      * Loop over actions for this form and insert actions and action meta.
      * 
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     public function insert_actions()
@@ -360,7 +360,7 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
      * Update our processing option with $this->form.
      * Respond with the remaining steps.
      * 
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     public function insert_fields()

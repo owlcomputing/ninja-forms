@@ -83,7 +83,7 @@ class NF_Updates_CacheCollateFields extends NF_Abstracts_RequiredUpdate
      * @param $data (Array) The data object passed in by the AJAX call.
      * @param $running (Array) The array of required updates being run.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function __construct( $data = array(), $running )
     {
@@ -110,7 +110,7 @@ class NF_Updates_CacheCollateFields extends NF_Abstracts_RequiredUpdate
     /**
      * Function to loop over the batch.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function process()
     {
@@ -168,7 +168,7 @@ class NF_Updates_CacheCollateFields extends NF_Abstracts_RequiredUpdate
     /**
      * Function to run any setup steps necessary to begin processing.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function startup()
     {
@@ -192,7 +192,7 @@ class NF_Updates_CacheCollateFields extends NF_Abstracts_RequiredUpdate
     /**
      * Function to cleanup any lingering temporary elements of a required update after completion.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function cleanup()
     {
@@ -212,7 +212,7 @@ class NF_Updates_CacheCollateFields extends NF_Abstracts_RequiredUpdate
      * 
      * @param $items (Array) The list of ids to be deleted.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function maybe_delete_fields()
     {
@@ -257,7 +257,7 @@ class NF_Updates_CacheCollateFields extends NF_Abstracts_RequiredUpdate
      * This method doesn't perform those operations, but it sets the class vars that the appropriate
      * methods use to figure out what to add and remove.
      *
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     private function setup_vars()
@@ -372,7 +372,7 @@ class NF_Updates_CacheCollateFields extends NF_Abstracts_RequiredUpdate
      * This is the first insert/update method to run, so it doesn't check lock_process.
      * If the insert class var is empty, then we bail early.
      * 
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     private function maybe_insert_fields()
@@ -487,7 +487,7 @@ class NF_Updates_CacheCollateFields extends NF_Abstracts_RequiredUpdate
      *     Fetches submission post meta for the specific form ID and _field_OLDID
      *     Uses a SQL UPDATE statement to replace _field_OLDID with _field_NEWID
      * 
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     private function maybe_update_submissions()
@@ -575,7 +575,7 @@ class NF_Updates_CacheCollateFields extends NF_Abstracts_RequiredUpdate
      *
      * If lock_process is true or we have no field_ids, we bail early.
      * 
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     private function maybe_update_fields()
@@ -643,7 +643,7 @@ class NF_Updates_CacheCollateFields extends NF_Abstracts_RequiredUpdate
      * If we've inserted any fields that have changed ids, we want to update those ids in our cache.
      * This method grabs the cache, updates any field ids, then updates the cache.
      * 
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     private function update_form_cache()
@@ -669,7 +669,7 @@ class NF_Updates_CacheCollateFields extends NF_Abstracts_RequiredUpdate
      * This method updates our form class var so that it can be passed to the next step.
      * If we've completed this step, it calls the cleanup method.
      * 
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     private function end_of_step()

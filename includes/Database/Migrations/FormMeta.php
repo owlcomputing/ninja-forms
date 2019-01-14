@@ -22,7 +22,7 @@ class NF_Database_Migrations_FormMeta extends NF_Abstracts_Migration
      * 
      * @since 3.0.0
      * 
-     * @updated UPDATE_VERSION_ON_MERGE
+     * @updated 3.4.0
      */
     public function run()
     {
@@ -42,7 +42,7 @@ class NF_Database_Migrations_FormMeta extends NF_Abstracts_Migration
     /**
      * Function to be run as part of our CacheCollateForms required update.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function cache_collate_forms()
     {

@@ -39,7 +39,7 @@ class NF_Database_Migrations_Relationships extends NF_Abstracts_Migration
     /**
      * Function to ensure proper collation of the relationships table.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function cache_collate_objects()
     {

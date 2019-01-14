@@ -3,7 +3,7 @@
 Plugin Name: Ninja Forms
 Plugin URI: http://ninjaforms.com/
 Description: Ninja Forms is a webform builder with unparalleled ease of use and features.
-Version: 3.3.21.3
+Version: 3.4.0
 Author: The WP Ninjas
 Author URI: http://ninjaforms.com
 Text Domain: ninja-forms
@@ -58,10 +58,10 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
          * @since 3.0
          */
 
-        const VERSION = '3.3.21.3';
+        const VERSION = '3.4.0';
         
         /**
-         * @since UPDATE_VERSION_ON_MERGE
+         * @since 3.4.0
          */
         const DB_VERSION = '1.4';
 
@@ -86,7 +86,7 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
          * 
          * This may be overwritten at a later point in this file.
          *
-         * @since UPDATE_VERSION_ON_MERGE
+         * @since 3.4.0
          * @var string $db_version
          */
         public static $db_version = self::DB_VERSION;

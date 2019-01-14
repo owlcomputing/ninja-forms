@@ -44,7 +44,7 @@ class NF_Updates_CacheCollateObjects extends NF_Abstracts_RequiredUpdate
      * @param $data (Array) The data object passed in by the AJAX call.
      * @param $running (Array) The array of required updates being run.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function __construct( $data = array(), $running )
     {
@@ -71,7 +71,7 @@ class NF_Updates_CacheCollateObjects extends NF_Abstracts_RequiredUpdate
     /**
      * Function to loop over the batch.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function process()
     {
@@ -122,7 +122,7 @@ class NF_Updates_CacheCollateObjects extends NF_Abstracts_RequiredUpdate
     /**
      * Function to run any setup steps necessary to begin processing.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function startup()
     {
@@ -185,7 +185,7 @@ class NF_Updates_CacheCollateObjects extends NF_Abstracts_RequiredUpdate
     /**
      * Function to cleanup any lingering temporary elements of a required update after completion.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function cleanup()
     {
@@ -205,7 +205,7 @@ class NF_Updates_CacheCollateObjects extends NF_Abstracts_RequiredUpdate
      * 
      * @return Void
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     private function maybe_update_objects()
     {
@@ -249,7 +249,7 @@ class NF_Updates_CacheCollateObjects extends NF_Abstracts_RequiredUpdate
      * 
      * @return Void
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     private function maybe_update_object_meta()
     {

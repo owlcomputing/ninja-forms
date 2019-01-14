@@ -22,7 +22,7 @@ class NF_Database_Migrations_Upgrades extends NF_Abstracts_Migration
      * 
      * @since 3.3.11
      * 
-     * @updated UPDATE_VERSION_ON_MERGE
+     * @updated 3.4.0
      */
     public function run()
     {
@@ -40,7 +40,7 @@ class NF_Database_Migrations_Upgrades extends NF_Abstracts_Migration
     /**
      * Function to define our maintenance column.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function cache_collate_fields()
     {

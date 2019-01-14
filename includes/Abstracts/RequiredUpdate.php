@@ -23,7 +23,7 @@ abstract class NF_Abstracts_RequiredUpdate
     /**
      * Constructor
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function __construct( $data = array() )
     {
@@ -47,7 +47,7 @@ abstract class NF_Abstracts_RequiredUpdate
     /**
      * Function to loop over the batch.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function process()
     {
@@ -60,7 +60,7 @@ abstract class NF_Abstracts_RequiredUpdate
     /**
      * Function to run any setup steps necessary to begin processing.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function startup()
     {
@@ -73,7 +73,7 @@ abstract class NF_Abstracts_RequiredUpdate
     /**
      * Function to cleanup any lingering temporary elements of required updates after completion.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function cleanup()
     {
@@ -99,7 +99,7 @@ abstract class NF_Abstracts_RequiredUpdate
     /**
      * Function to dump our JSON response and kill processing.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function respond()
     {
@@ -115,7 +115,7 @@ abstract class NF_Abstracts_RequiredUpdate
      * 
      * @param $callback (String) The callback function in the migration file.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     protected function migrate( $callback )
     {
@@ -129,7 +129,7 @@ abstract class NF_Abstracts_RequiredUpdate
      * @param $value (Mixed) The value to be escaped for SQL.
      * @return (String) The escaped (and possibly serialized) value of the string.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function prepare( $value )
     {
@@ -152,7 +152,7 @@ abstract class NF_Abstracts_RequiredUpdate
      * @param $sql (String) The query to be run.
      * @return (Object) The response to the wpdb query call.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     protected function query( $sql )
     {
@@ -170,7 +170,7 @@ abstract class NF_Abstracts_RequiredUpdate
     /**
      * Function to record the completion of our update in the DB.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     protected function confirm_complete()
     {
@@ -192,7 +192,7 @@ abstract class NF_Abstracts_RequiredUpdate
      * Enable Maintenance mode
      * Enables maintenance mode so the form will not render on the front end while updates are running.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      *
      * @param $prefix - the db prefix.
      * @param $form_id - The id of the form.
@@ -209,7 +209,7 @@ abstract class NF_Abstracts_RequiredUpdate
      * Disable Maintenance Mode
      * Disables maintenance mode, so the form will be displayed on the front end..
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      *
      * @param $prefix - the db prefix.
      * @param $form_id - The id of the form.

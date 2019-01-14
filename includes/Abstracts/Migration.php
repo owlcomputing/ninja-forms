@@ -46,7 +46,7 @@ abstract class NF_Abstracts_Migration
      * 
      * @return (Boolean) Whether or not the column exists.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function column_exists( $column )
     {
@@ -97,7 +97,7 @@ abstract class NF_Abstracts_Migration
      * 
      * @param $callback (String) The function to be run by this call.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function _do_upgrade( $callback )
     {

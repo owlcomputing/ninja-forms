@@ -35,7 +35,7 @@ class NF_Admin_Processes_ExpiredSubmissionCleanup extends NF_Abstracts_BatchProc
     /**
      * Function to run any setup steps necessary to begin processing for steps after the first.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      * @return  void 
      */
     public function restart()
@@ -47,7 +47,7 @@ class NF_Admin_Processes_ExpiredSubmissionCleanup extends NF_Abstracts_BatchProc
     /**
      * Function to loop over the batch.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      * @return  void 
      */
     public function process()
@@ -78,7 +78,7 @@ class NF_Admin_Processes_ExpiredSubmissionCleanup extends NF_Abstracts_BatchProc
     /**
      * Function to cleanup any lingering temporary elements of a batch process after completion.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      * @return  void 
      */
     public function cleanup()
@@ -90,7 +90,7 @@ class NF_Admin_Processes_ExpiredSubmissionCleanup extends NF_Abstracts_BatchProc
      * Get Steps
      * Determines the amount of steps needed for the step processors.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      * @return int of the number of steps.
      */
     public function get_steps()

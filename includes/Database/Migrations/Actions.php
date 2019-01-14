@@ -22,7 +22,7 @@ class NF_Database_Migrations_Actions extends NF_Abstracts_Migration
      * 
      * @since 3.0.0
      * 
-     * @updated UPDATE_VERSION_ON_MERGE
+     * @updated 3.4.0
      */
     public function run()
     {
@@ -48,7 +48,7 @@ class NF_Database_Migrations_Actions extends NF_Abstracts_Migration
      *
      * @since 3.3.12
      * 
-     * @updated UPDATE_VERSION_ON_MERGE
+     * @updated 3.4.0
      */
     public function cache_collate_actions()
     {

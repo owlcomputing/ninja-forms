@@ -50,7 +50,7 @@ class NF_AJAX_REST_RequiredUpdate extends NF_AJAX_REST_Controller
 	 * @param $request_data (Array)
 	 * @return $data (Array)
 	 * 
-	 * @since UPDATE_VERSION_ON_MERGE
+	 * @since 3.4.0
 	 */
 	public function get( $request_data ) {
         

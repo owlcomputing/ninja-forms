@@ -33,7 +33,7 @@ class NF_Updates_CacheCollateCleanup extends NF_Abstracts_RequiredUpdate
      * @param $data (Array) The data object passed in by the AJAX call.
      * @param $running (Array) The array of required updates being run.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function __construct( $data = array(), $running )
     {
@@ -56,7 +56,7 @@ class NF_Updates_CacheCollateCleanup extends NF_Abstracts_RequiredUpdate
     /**
      * Function to loop over the batch.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function process()
     {
@@ -126,7 +126,7 @@ class NF_Updates_CacheCollateCleanup extends NF_Abstracts_RequiredUpdate
     /**
      * Function to run any setup steps necessary to begin processing.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function startup()
     {
@@ -219,7 +219,7 @@ class NF_Updates_CacheCollateCleanup extends NF_Abstracts_RequiredUpdate
     /**
      * Function to cleanup any lingering temporary elements of a required update after completion.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function cleanup()
     {
@@ -241,7 +241,7 @@ class NF_Updates_CacheCollateCleanup extends NF_Abstracts_RequiredUpdate
      * 
      * @return (Int) The count of rows.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function get_total( $table )
     {
@@ -253,7 +253,7 @@ class NF_Updates_CacheCollateCleanup extends NF_Abstracts_RequiredUpdate
     /**
      * Function to perform a simple, single-step delete of orphan data.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     private function do_easy_delete()
     {
@@ -270,7 +270,7 @@ class NF_Updates_CacheCollateCleanup extends NF_Abstracts_RequiredUpdate
     /**
      * Function to perform a multi-step delete of orphan data.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     private function do_step_delete()
     {
@@ -330,7 +330,7 @@ class NF_Updates_CacheCollateCleanup extends NF_Abstracts_RequiredUpdate
      * 
      * @return (Boolean)
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     private function uniquify( $v )
     {
@@ -341,7 +341,7 @@ class NF_Updates_CacheCollateCleanup extends NF_Abstracts_RequiredUpdate
     /**
      * Function to remove orphan submissions from the posts and postmeta tables.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     private function adopt_subs()
     {
@@ -385,7 +385,7 @@ class NF_Updates_CacheCollateCleanup extends NF_Abstracts_RequiredUpdate
      * Function to remove orphan field data that's still attached
      * to valid submissions from the postmeta table.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     private function adopt_fields()
     {
@@ -482,7 +482,7 @@ class NF_Updates_CacheCollateCleanup extends NF_Abstracts_RequiredUpdate
      * @return (Array) Associative if our data was complex.
      *                 Non-associative if our data was a single item.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     private function array_squash( $data )
     {

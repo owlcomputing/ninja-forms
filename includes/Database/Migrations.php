@@ -47,7 +47,7 @@ class NF_Database_Migrations
      * 
      * @param $callback (String) The method this upgrade will call from individual migration files.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function do_upgrade( $callback )
     {

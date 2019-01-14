@@ -146,7 +146,7 @@ class NF_AJAX_Controllers_Form extends NF_Abstracts_Controller
      * This function will take all form out of maintenance mode( in case some
      * are still in maintenance mode after some required updates )
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function remove_maintenance_mode() {
 

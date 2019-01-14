@@ -80,7 +80,7 @@ class NF_Updates_CacheCollateActions extends NF_Abstracts_RequiredUpdate
      * @param $data (Array) The data object passed in by the AJAX call.
      * @param $running (Array) The array of required updates being run.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function __construct( $data = array(), $running )
     {
@@ -107,7 +107,7 @@ class NF_Updates_CacheCollateActions extends NF_Abstracts_RequiredUpdate
     /**
      * Function to loop over the batch.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function process()
     {
@@ -141,7 +141,7 @@ class NF_Updates_CacheCollateActions extends NF_Abstracts_RequiredUpdate
     /**
      * Function to run any setup steps necessary to begin processing.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function startup()
     {
@@ -165,7 +165,7 @@ class NF_Updates_CacheCollateActions extends NF_Abstracts_RequiredUpdate
     /**
      * Setup our global variables used in other methods.
      * 
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     private function setup_vars()
@@ -197,7 +197,7 @@ class NF_Updates_CacheCollateActions extends NF_Abstracts_RequiredUpdate
     /**
      * Function to cleanup any lingering temporary elements of a required update after completion.
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public function cleanup()
     {
@@ -218,7 +218,7 @@ class NF_Updates_CacheCollateActions extends NF_Abstracts_RequiredUpdate
      *
      * If we haven't locked processing, prepare to end this process.
      * 
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     private function end_of_step()
@@ -267,7 +267,7 @@ class NF_Updates_CacheCollateActions extends NF_Abstracts_RequiredUpdate
     /**
      * If we've made any changes to our form actions, update our form cache to match.
      * 
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     private function update_form_cache()
@@ -292,7 +292,7 @@ class NF_Updates_CacheCollateActions extends NF_Abstracts_RequiredUpdate
      * Loop over all of our actions and update our database if necessary.
      * Check each setting against $this->blacklist to make sure we want to insert that value.
      * 
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @return void
      */
     private function maybe_update_actions()

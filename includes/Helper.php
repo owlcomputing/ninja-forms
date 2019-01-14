@@ -294,7 +294,7 @@ final class WPN_Helper
      * @param $stage (int) The target stage of this update. Default to the current max stage.
      * 
      * @since 3.3.7
-     * @updated UPDATE_VERSION_ON_MERGE
+     * @updated 3.4.0
      */
     public static function update_nf_cache( $id, $data, $stage = 0 ) {
         $stage = ( $stage ) ? $stage : WPN_Helper::get_stage();
@@ -322,7 +322,7 @@ final class WPN_Helper
      * 
      * @return int
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public static function get_stage() {
         $ver = Ninja_Forms::$db_version;
@@ -336,7 +336,7 @@ final class WPN_Helper
      * @param $id (int) The form ID.
      * @since 3.3.18
      * @return  $form_cache Array of form data.
-     * @updated UPDATE_VERSION_ON_MERGE
+     * @updated 3.4.0
      */
     public static function build_nf_cache( $id ) {
         $form = Ninja_Forms()->form( $id )->get();
@@ -400,7 +400,7 @@ final class WPN_Helper
      * 
      * @return int $zuul
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public static function get_zuul() {
         $zuul = get_option( 'ninja_forms_zuul', -1 );
@@ -421,7 +421,7 @@ final class WPN_Helper
      * 
      * @return bool
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      */
     public static function gated_release( $threshold = 0 ) {
         $gatekeeper = $threshold >= self::get_zuul();
@@ -436,7 +436,7 @@ final class WPN_Helper
      * Checks the upgrades table to see if the form the user is viewing
      * is under maintenance mode.
      *
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      *
      * @param $form_id - The ID of the form we are checking.
      *
@@ -465,7 +465,7 @@ final class WPN_Helper
      * This function either put all forms in maintenance mode or remove maintenance
      * mode for all forms. Depending on the input parameters
      * 
-     * @since UPDATE_VERSION_ON_MERGE
+     * @since 3.4.0
      * 
      * @param $mode - Default 0 ( Take all forms out of maintenance mode )
      */

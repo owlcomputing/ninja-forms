@@ -239,7 +239,7 @@ final class NF_Database_Models_Form extends NF_Abstracts_Model
      *  Call our WPN_Helper method to build a form cache.
      * 
      * @since  3.0
-     * @update UPDATE_VERSION_ON_MERGE
+     * @update 3.4.0
      * @param  int  $form_id ID of the form being duplicated.
      * @return $new_form_id  ID of our form duplicate.
      */
@@ -380,7 +380,7 @@ final class NF_Database_Models_Form extends NF_Abstracts_Model
      *
      * This is a fairly repetative task, so we've extrapolated the code to its own function.
      * 
-     * @since  UPDATE_VERSION_ON_MERGE
+     * @since  3.4.0
      * @param  string  $table_name Name of the table we want to update.
      * @return array   Associative array like: ['insert' => "`column1`, "`column2`", etc", 'select' => "`column1`, etc."]
      */
