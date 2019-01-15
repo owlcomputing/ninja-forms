@@ -449,7 +449,8 @@ final class WPN_Helper
 
         if( ! $db_version ) return false;
 
-        if( 1.4 > $db_version ) return false;
+        // Exit early if the column doesn't exist.
+        if( version_compare( '1.3', $db_version, '>' ) ) return false;
 
         // Get our maintenance value from the DB and return it at the zero position.
         $maintenance = $wpdb->get_row(
