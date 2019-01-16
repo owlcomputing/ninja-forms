@@ -84,7 +84,7 @@ class NF_Admin_Processes_ImportForm extends NF_Abstracts_BatchProcess
          * We're first going to try to json_decode. If we don't get an array, we'll unserialize.
          */
 
-        $decoded_data = json_decode( WPN_Helper::json_cleanup( html_entity_decode( $data ) ), true );
+        $decoded_data = json_decode( WPN_Helper::json_cleanup( html_entity_decode( $data, ENT_QUOTES ) ), true );
         
         // If we don't have an array, try unserializing
         if ( ! is_array( $decoded_data ) ) {
