@@ -125,7 +125,7 @@ For help and video tutorials, please visit our website: [Ninja Forms Documentati
 
 *Bugs:*
 
-* Resolved an issue that sometimes caused fields to not appear on the form after publish. (Special thanks to Tim de Hoog).
+* Resolved an issue that sometimes caused fields to not appear on the form after publish. (Special thanks to Tim de Hoog and Sidekick-IT).
 
 = 3.4.1 (15 January 2019) =
 
