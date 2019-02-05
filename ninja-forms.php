@@ -491,11 +491,14 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
             $sql = "SELECT COUNT( `id` ) AS total FROM `{$wpdb->prefix}nf3_forms`;";
             $result = $wpdb->get_results( $sql, 'ARRAY_A' );
             $threshold = 10; // Threshold percentage for our required updates.
+            if ( get_transient( 'ninja_forms_prevent_updates' ) ) {
+                update_option( 'ninja_forms_needs_updates', 0 );
+            }
             // If we got back a list of updates...
             // AND If we have any forms on the site...
             // AND If the gate is open...
             // To avoid errors on older upgrades, ignore the gatekeeper if the db version is the baseline (1.0)...
-            if ( ! empty( $required_updates ) 
+            elseif ( ! empty( $required_updates ) 
                 && 0 < $result[ 0 ][ 'total' ]
                 &&  ( WPN_Helper::gated_release( $threshold )
                 || '1.0' == self::$db_version ) ) {
