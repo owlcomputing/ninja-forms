@@ -193,7 +193,7 @@ class NF_Updates_CacheCollateForms extends NF_Abstracts_RequiredUpdate
      * Also checks meta values against our $this->blacklist.
      * 
      * @since  3.4.0
-     * @updated UPDATE_VERSION_ON_MERGE
+     * @updated 3.4.4
      * @return [type]  [description]
      */
     private function update_form()
