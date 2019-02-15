@@ -134,10 +134,20 @@ final class NF_MergeTags_Fields extends NF_Abstracts_MergeTags
 
             // Skip fields without values.
             if( ! $field[ 'value' ] ) continue;
+			//Skip values of 0.00
+			if( $field['value'] == '0.00') continue;
 
             if( is_array( $field[ 'value' ] ) ) $field[ 'value' ] = implode( ', ', $field[ 'value' ] );
 
-            $return .= '<tr><td valign="top">' . apply_filters('ninja_forms_merge_label', $field[ 'label' ]) .':</td><td>' . $field[ 'value' ] . '</td></tr>';
+            //if using inline quantity then show quantity in the value column.
+			if($field[ 'product_use_quantity' ])
+			{
+            		$return .= '<tr><td valign="top">' . apply_filters('ninja_forms_merge_label', $field[ 'label' ]) .':</td><td style="padding-left:10px;">$' . $field[ 'value' ] . ' - ' . $field[ 'value' ] / str_replace("$","",$field['product_price']) .' units @ ' . $field[ 'product_price' ] . ' per unit' . '</td></tr>';
+			}
+			else
+			{
+				$return .= '<tr><td valign="top">' . apply_filters('ninja_forms_merge_label', $field[ 'label' ]) .':</td><td style="padding-left:10px;">' . $field[ 'value' ] . '</td></tr>';
+			}
         }
         $return .= '</table>';
         return $return;
